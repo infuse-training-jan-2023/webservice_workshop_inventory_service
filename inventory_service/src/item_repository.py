@@ -1,30 +1,33 @@
 import sqlite3
+from update_item import update_item
+from update_item_container import update_item_container
+from delete_item import delete_item
 
 class ItemRepository:
-    DBPATH = './todo.db'
+    DBPATH = './inventory.db'
 
     @staticmethod
     def connect_db():
-
         return sqlite3.connect(ItemRepository.DBPATH)
+    @staticmethod
+    def update_item_repository(item_id,new_item):
+        conn = ItemRepository.connect_db()
+        cursor = conn.cursor()
+        result = update_item(cursor,item_id,new_item)
+        conn.commit()
+        return result
+    @staticmethod
+    def update_item_container_repository(item_id,new_container):
+        conn = ItemRepository.connect_db()
+        cursor = conn.cursor()
+        result =  update_item_container(cursor,item_id,new_container)
+        conn.commit()
+        return result
 
     @staticmethod
-    def get_all_items():
-        try:
-            conn = ItemRepository.connect_db()
-            c = conn.cursor()
-            rows = c.execute('SELECT * FROM items')
-            return rows
-        except Exception as e:
-            raise Exception('Error: ',e)
-    @staticmethod
-    def add_item(item,reminder):
-        try:
-            conn = ItemRepository.connect_db()
-            c = conn.cursor()
-            item = c.execute('f INSERT INTO items (id,item,status,reminder) VALUES (?,?,?,?)',(item,'l','l','k'))
-            item.commit()
-            return {rows}
-        except Exception as e:
-            raise Exception('Error: ',e)
-
+    def delete_item_respository(item_id):
+        conn = ItemRepository.connect_db()
+        cursor = conn.cursor()
+        result = delete_item(cursor,item_id)
+        conn.commit()
+        return result
