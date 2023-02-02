@@ -18,17 +18,14 @@ class ItemAction:
             return {}
 
 
-    def add_item_action(self,container_name , item):
-        try:
-            item = self.item_repo.add_item_repository(container_name , item)
-            return item
-        except Exception as e:
-            print(e)
-            return {}
+    def add_item_action(self,data):
+        item1 = data['item']
+        container = data['container']
+        print(item1)
+        return self.item_repo.add_item_repository(container,item1)
 
     def delete_container_action(self,container_name):
         try:
-            print(container_name)
             item = self.item_repo.delete_container_repository(container_name)
             return item
         except Exception as e:

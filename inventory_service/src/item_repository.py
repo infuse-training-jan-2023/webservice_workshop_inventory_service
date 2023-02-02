@@ -43,10 +43,10 @@ class ItemRepository:
         return  display_all(cursor)
 
     @staticmethod
-    def add_item_repository(container_name,item ):
+    def add_item_repository(container_name,item):
         conn = ItemRepository.connect_db()
         cursor = conn.cursor()
-        data= add_item(cursor, container_name ,item)
+        data= add_item(cursor,container_name,item)
         conn.commit()
         return data
 
