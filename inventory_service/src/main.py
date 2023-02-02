@@ -48,6 +48,3 @@ def udpate_item_container_inventory():
 @app.route('/delete/<item_id>', methods=['GET','POST'])
 def delete_item_inventory(item_id):
     return actions.delete_item_action(item_id)
-
-if __name__ == '__main__':
-    app.run(debug=True,host = '127.0.0.1',port = 4000)

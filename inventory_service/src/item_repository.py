@@ -9,6 +9,33 @@ class ItemRepository:
     @staticmethod
     def connect_db():
         return sqlite3.connect(ItemRepository.DBPATH)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     @staticmethod
     def update_item_repository(item_id,new_item):
         conn = ItemRepository.connect_db()

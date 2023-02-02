@@ -3,6 +3,41 @@ from item_repository import ItemRepository
 class ItemAction:
     def __init__(self):
         self.item_repo = ItemRepository()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     def update_item_action(self,data):
         item_id = data['item_id']
         new_item = data['new_item']
