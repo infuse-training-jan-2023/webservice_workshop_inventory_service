@@ -1,16 +1,16 @@
 import sqlite3
-connection = sqlite3.connect('todo.db')
+connection = sqlite3.connect('inventory.db')
 with open('DB/schema.sql') as f:
     connection.executescript(f.read())
 
 cursor  = connection.cursor()
-cursor.execute('INSERT INTO items(item, status, reminder) VALUES(?,?,?)',
-('go to meseum','not started', True)
+cursor.execute('INSERT INTO inventory(container_name, item) VALUES(?,?)',
+('electronics','phone')
 )
-cursor  = connection.cursor()
-cursor.execute('INSERT INTO items(item, status, reminder) VALUES(?,?,?)',
-('complete assignments','in progress', True)
-)
+# cursor  = connection.cursor()
+# cursor.execute('INSERT INTO items(item, status, reminder) VALUES(?,?,?)',
+# ('complete assignments','in progress', True)
+# )
 connection.commit()
 connection.close()
 
