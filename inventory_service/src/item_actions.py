@@ -14,23 +14,20 @@ class ItemAction:
                     'item':item[2]})
             return res
         except Exception as e:
-            print(e)
-            return {}
+            return e
 
 
     def add_item_action(self,data):
-        item1 = data['item']
+        item = data['item']
         container = data['container']
-        print(item1)
-        return self.item_repo.add_item_repository(container,item1)
+        return self.item_repo.add_item_repository(container,item)
 
     def delete_container_action(self,container_name):
         try:
             item = self.item_repo.delete_container_repository(container_name)
             return item
         except Exception as e:
-            print(e)
-            return {}
+            return e
 
     def update_item_action(self,data):
         item_id = data['item_id']
@@ -42,4 +39,4 @@ class ItemAction:
         return self.item_repo.update_item_container_repository(item_id,new_container)
     def delete_item_action(self,item_id):
         return self.item_repo.delete_item_respository(item_id)
-        
+
