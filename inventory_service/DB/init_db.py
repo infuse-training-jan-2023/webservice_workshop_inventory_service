@@ -7,12 +7,11 @@ cursor  = connection.cursor()
 cursor.execute('INSERT INTO inventory(container_name, item) VALUES(?,?)',
 ('electronics','phone')
 )
-# cursor  = connection.cursor()
-# cursor.execute('INSERT INTO items(item, status, reminder) VALUES(?,?,?)',
-# ('complete assignments','in progress', True)
-# )
 connection.commit()
 connection.close()
+
+
+
 
 
 

@@ -5,3 +5,4 @@ def delete_item(cursor,item_id):
         return "deletion successful"
     except Exception as e:
         return e
+        

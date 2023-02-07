@@ -3,3 +3,4 @@ CREATE TABLE 'inventory'(
     'container_name' TEXT NOT NULL,
     'item' TEXT NOT NULL
 )
+

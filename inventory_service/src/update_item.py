@@ -6,3 +6,4 @@ def update_item(cursor,id,new_item):
         return " updated successfully"
     except Exception as e:
         return e
+

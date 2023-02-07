@@ -21,6 +21,7 @@ class ItemRepository:
         result = update_item(cursor,item_id,new_item)
         conn.commit()
         return result
+        
     @staticmethod
     def update_item_container_repository(item_id,new_container):
         conn = ItemRepository.connect_db()
@@ -36,6 +37,7 @@ class ItemRepository:
         result = delete_item(cursor,item_id)
         conn.commit()
         return result
+
     @staticmethod
     def display_items_repository():
         conn = ItemRepository.connect_db()
@@ -57,3 +59,4 @@ class ItemRepository:
         data= delete_container(cursor, container_name )
         conn.commit()
         return data
+
