@@ -4,3 +4,4 @@ def display_all(cursor):
       return rows
     except Exception as e:
       raise Exception('Error: ', e)
+      
